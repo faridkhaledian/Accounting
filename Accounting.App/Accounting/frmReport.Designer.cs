@@ -47,6 +47,7 @@
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.stiPrint = new Stimulsoft.Report.StiReport();
 			this.toolStrip1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgReport)).BeginInit();
@@ -113,6 +114,7 @@
 			this.btnPrint.Size = new System.Drawing.Size(45, 63);
 			this.btnPrint.Text = "چاپ";
 			this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
 			// 
 			// groupBox1
 			// 
@@ -258,6 +260,27 @@
 			this.Column5.Name = "Column5";
 			this.Column5.ReadOnly = true;
 			// 
+			// stiPrint
+			// 
+			this.stiPrint.CookieContainer = null;
+			this.stiPrint.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+			this.stiPrint.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+			this.stiPrint.ReportAlias = "Report";
+			this.stiPrint.ReportGuid = "1b14fff57f0b4710b402960b0e2b2161";
+			this.stiPrint.ReportName = "Report";
+			this.stiPrint.ReportSource = null;
+			this.stiPrint.ReportUnit = Stimulsoft.Report.StiReportUnitType.Inches;
+			this.stiPrint.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+			this.stiPrint.UseProgressInThread = false;
+			// 
 			// frmReport
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -271,6 +294,7 @@
 			this.Name = "frmReport";
 			this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Text = "مدیریت تراکنش ها";
 			this.Load += new System.EventHandler(this.frmReport_Load);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
@@ -303,5 +327,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+		private Stimulsoft.Report.StiReport stiPrint;
 	}
 }

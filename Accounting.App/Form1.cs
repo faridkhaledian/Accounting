@@ -1,4 +1,6 @@
-﻿using Accounting.utility.Convertor;
+﻿using Accounting.Business;
+using Accounting.utility.Convertor;
+using Accounting.ViewModels.Accounting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +30,9 @@ namespace Accounting.App
 				this.Show();
 				lblDate.Text = DateTime.Now.ToShamsi();
 				lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+
+				Report();
+				
 			}
             else
             {
@@ -35,6 +40,14 @@ namespace Accounting.App
             }
 
         }
+		void Report()
+		{
+			ReportViewModel report = Account.ReportForm();
+			lblPay.Text=report.Pay.ToString("#,0");
+			lblRecive.Text=report.Recive.ToString("#,0");
+			lblAccountBalance.Text = report.AccountBalance.ToString("#,0");
+		}
+
 
 		private void toolStripButton1_Click(object sender, EventArgs e)
 		{
@@ -86,6 +99,16 @@ namespace Accounting.App
 			frmLogin frmLogin = new frmLogin();
 			frmLogin.IsEdit = true;	
 			frmLogin.ShowDialog();
+		}
+
+		private void lblDate_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void lblTime_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
