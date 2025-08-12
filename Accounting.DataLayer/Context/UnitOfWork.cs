@@ -19,8 +19,6 @@ namespace Accounting.DataLayer.Context
 		{
 			get
 			{
-
-
 				if (_customerRepository == null)
 				{
 
@@ -32,9 +30,6 @@ namespace Accounting.DataLayer.Context
 
 			}
 		}
-		/// <summary>
-		/// /////////////////////////////////////////////
-		/// </summary>
 		private GenericRepository<Accounting> _accountingcRepository;
         public GenericRepository<Accounting> AccoountingRepository { get {
 
@@ -47,10 +42,6 @@ namespace Accounting.DataLayer.Context
 
 
             }  }
-		/// <summary>
-		/// ///////////////////////////////////////////////
-		/// </summary>
-
 		private GenericRepository<Login> _loginRepository;
         public GenericRepository<Login> LoginRepository { get {
 
@@ -63,9 +54,6 @@ namespace Accounting.DataLayer.Context
 				return _loginRepository;
 			
 			} }
-
-
-
         public void Save()
 		{
 			db.SaveChanges();
@@ -75,8 +63,5 @@ namespace Accounting.DataLayer.Context
 		{
 			db.Dispose();
 		}
-
-
-
 	}
 }
